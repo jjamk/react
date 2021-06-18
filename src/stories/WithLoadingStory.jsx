@@ -16,11 +16,10 @@ export default {
 };
 
 export const 기본설정 = () => {
-  return <Text>안녕하세요</Text>;
+  <Text>안녕하세요</Text>;
 };
-
 export const isLoading = () => {
-  return <div>
+  <div>
     <ButtonWithLoading isLoading>안녕하세요</ButtonWithLoading>
     <TextWithLoading isLoading>안녕하세요</TextWithLoading>
   </div>;
