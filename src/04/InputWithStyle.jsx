@@ -32,14 +32,25 @@ class Input extends PureComponent {
       <div className="input-field">
         <input
           id={`input_${name}`}
-          className="validate"
+          //오류가 있을 경우 invalid 클래스 추가
+          className={`validate ${errorMessage && "invalid"}`}
           ref={this.setRef}
           type={type}
           onChange={this.handleChange}
           value={value}
         />
-        <label htmlFor={`input_${name}`}>{label}</label>
-        {errorMessage && <span className="helper-text">{errorMessage}</span>}
+        <label
+          className="active"
+          //active 클래스는 라벨의 위치를 올리기위해
+          htmlFor={`input_${name}`}
+        >
+          {label}
+        </label>
+        {errorMessage && (
+          <span className="helper-text" data-error={errorMessage}>
+            {errorMessage}
+          </span>
+        )}
       </div>
     );
   }
